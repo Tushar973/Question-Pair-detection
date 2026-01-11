@@ -1,138 +1,148 @@
-# quora-question-pairs
-A NLP project to find weather given 2 questions are same are not semantically speaking.
+# Quora Question Pairs – Duplicate Question Detection
 
-🔹 Project Summary
+An **NLP-based project** to determine whether two questions are **semantically equivalent**, even if they are phrased differently.  
+The project focuses on **EDA, text preprocessing, and feature engineering**, forming a strong foundation for real-world machine learning systems.
 
-Built an end-to-end NLP feature engineering pipeline for detecting duplicate question pairs using EDA, text preprocessing, handcrafted linguistic features, and Bag of Words (BoW).
+---
 
-The project demonstrates strong fundamentals in data analysis, NLP preprocessing, and feature engineering, commonly used in real-world ML systems.
+## 📌 Project Summary
 
-🔹 Problem Statement
+This project builds an **end-to-end NLP feature engineering pipeline** for detecting duplicate question pairs. It emphasizes:
 
-Given two questions, determine whether they convey the same intent.
+- Exploratory Data Analysis (EDA)
+- Text preprocessing
+- Handcrafted linguistic feature engineering
+- Bag of Words (BoW) representation
 
-🔹 Dataset
+The goal is to demonstrate **core NLP and data analysis skills** before applying advanced ML or deep learning models.
 
-Question pair dataset (question1, question2)
+---
 
-Binary target: is_duplicate
+## ❓ Problem Statement
 
-Sampled 60,000 records for efficient experimentation
+Given two questions, determine whether they **convey the same intent**.
 
-🔹 Exploratory Data Analysis (EDA)
+---
 
-Performed EDA to understand data quality and structure:
+## 📂 Dataset
 
-Class distribution (duplicate vs non-duplicate)
+- **Source:** Quora Question Pairs Dataset
+- **Features:**
+  - `question1`
+  - `question2`
+- **Target Variable:**
+  - `is_duplicate` (binary classification)
+- **Sampling:**
+  - Used **60,000 records** for efficient experimentation
 
-Missing and empty questions
+🔗 **Dataset Link:**  
+https://www.kaggle.com/c/quora-question-pairs
 
-Question length and word count analysis
+---
 
-Comparison of text characteristics across classes
+## 🔍 Exploratory Data Analysis (EDA)
 
-📌 Key Insight:
-Duplicate questions tend to have similar lengths and higher word overlap, motivating similarity-based feature engineering.
+Performed EDA to understand dataset structure and quality:
 
-🔹 Text Preprocessing
+- Class distribution (duplicate vs non-duplicate)
+- Missing and empty questions
+- Question length and word count analysis
+- Comparison of text characteristics across classes
 
-Implemented a custom preprocessing pipeline:
+### 📌 Key Insight
+Duplicate question pairs tend to:
+- Have similar lengths
+- Share a higher number of common words
 
-Lowercasing
+This insight motivated the use of **similarity-based and overlap-based features**.
 
-HTML removal
+---
 
-Punctuation and special character removal
+## 🧹 Text Preprocessing
 
-Contraction expansion
+Implemented a **custom text preprocessing pipeline** including:
 
-Whitespace normalization
+- Lowercasing
+- HTML tag removal
+- Punctuation and special character removal
+- Contraction expansion
+- Whitespace normalization
 
-Ensures clean and consistent textual input for modeling.
+These steps ensure **clean, consistent, and model-ready text**.
 
-🔹 Feature Engineering
-Basic Features
+---
 
-Character length of questions
+## 🧠 Feature Engineering
 
-Word count per question
+### 🔹 Basic Features
+- Character length of each question
+- Word count per question
 
-Advanced Linguistic Features
+### 🔹 Advanced Linguistic Features
+- Common word count
+- Unique word count
+- Word overlap ratio
+- Absolute word count difference
+- Mean word count difference
+- Token-level similarity metrics
 
-Common word count
+### 🔹 Bag of Words (BoW)
+- Used `CountVectorizer` to convert text into numerical vectors
+- Generated BoW representations for both questions
+- Combined BoW vectors with handcrafted numerical features to form the final feature matrix
 
-Unique word count
+---
 
-Word overlap ratio
+## 🛠️ Tools & Libraries
 
-Absolute and mean word count difference
+- **Python**
+- **Pandas**, **NumPy**
+- **Scikit-learn**
+- **Regular Expressions (re)**
+- **BeautifulSoup**
+- **Matplotlib / Seaborn**
 
-Token-level similarity metrics
+---
 
-Bag of Words (BoW)
+## 🔄 Project Workflow
 
-Used CountVectorizer to convert text into numerical vectors
+1. Data loading and sampling  
+2. Exploratory Data Analysis (EDA)  
+3. Text preprocessing  
+4. Feature engineering (basic + advanced)  
+5. Bag of Words vectorization  
+6. Final feature matrix preparation  
 
-Generated BoW features for both questions
+---
 
-Combined BoW vectors with handcrafted numerical features
+## 🎯 Skills Demonstrated
 
-🔹 Skills Demonstrated
+- Exploratory Data Analysis (EDA)
+- NLP text preprocessing
+- Feature engineering for text similarity
+- Bag of Words modeling
+- Data cleaning and transformation
+- Python-based ML workflows
 
-Exploratory Data Analysis (EDA)
+---
 
-NLP preprocessing
+## 🚀 Future Enhancements
 
-Feature engineering for text similarity
+- Replace BoW with **TF-IDF**
+- Use **word embeddings** (Word2Vec, GloVe)
+- Train ML models (Logistic Regression, XGBoost)
+- Handle class imbalance techniques
+- Extend to **transformer-based models** (BERT, SBERT)
 
-Bag of Words modeling
+---
 
-Data cleaning and transformation
+## 💡 Why This Project Matters
 
-Python (Pandas, NumPy, Scikit-learn)
+This project reflects **industry-relevant NLP practices**, focusing on:
+- Clean data
+- Meaningful, explainable features
+- Strong ML foundations
 
-🔹 Tools & Libraries
+These principles are critical before moving to complex deep learning or transformer-based models.
 
-Python
-
-Pandas, NumPy
-
-Scikit-learn
-
-Regular Expressions
-
-BeautifulSoup
-
-Matplotlib / Seaborn
-
-🔹 Project Workflow
-
-Data loading and sampling
-
-Exploratory Data Analysis
-
-Text preprocessing
-
-Feature engineering (basic + advanced)
-
-Bag of Words vectorization
-
-Final feature matrix preparation
-
-🔹 Future Enhancements
-
-Replace BoW with TF-IDF
-
-Use word embeddings (Word2Vec / GloVe)
-
-Train ML models (Logistic Regression, XGBoost)
-
-Handle class imbalance
-
-Extend to transformer-based models
-
-🔹 Why This Project Matters
-
-This project reflects industry-relevant NLP practices, focusing on clean data, meaningful features, and explainable modeling foundations, which are critical before applying complex ML or deep learning models.
-
-Dataset Link - https://www.kaggle.com/c/quora-question-pairs
+⭐ If you find this project useful, consider starring the repository!
